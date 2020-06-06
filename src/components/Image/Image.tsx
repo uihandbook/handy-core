@@ -5,29 +5,19 @@ import { WithClassName, WithCSS } from "handy-types";
 import { borderRadius, borders, spacing } from "handy-tokens";
 
 const imageStyles = css`
-  &,
-  & > img {
-    display: inline-block;
-    box-sizing: border-box;
-    margin: 0;
-  }
+  display: inline-block;
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
 `;
 
-const responsiveStyles = css`
-  &,
-  & > img {
-    width: 100%;
-    height: auto;
-  }
+const hiddenImageStyles = css`
+  visibility: hidden;
 `;
 
 const roundedStyles = css`
   border-radius: ${borderRadius.largest};
-`;
-
-const thumbnailStyles = css`
-  border: 1px solid ${borders.base};
-  padding: ${spacing.small};
 `;
 
 export interface ImageProps extends WithClassName, WithCSS {
@@ -45,22 +35,23 @@ export const Image: FC<ImageProps> = ({
   className,
   css,
   height,
-  responsive = false,
   rounded = false,
   src,
-  thumbnail = false,
   width
 }) => (
-  <div css={[imageStyles, thumbnail ? thumbnailStyles : null, responsive ? responsiveStyles : null, css]} className={`handy-image ${className}`}>
-    <img
-      css={[
-        height ? `height:auto; max-height: ${height}px;` : null,
-        rounded ? roundedStyles : null,
-        width ? `width: auto; max-width: ${width}px;` : null,
-      ]}
-      src={src}
-      alt={alt}
-    />
+  <div
+    css={[
+      imageStyles,
+      `background-image:url('${src}');`,
+      width ? `width:${width}px;` : null,
+      height ? `height:${height}px;` : null,
+      rounded ? roundedStyles : null,
+      css
+    ]}
+    title={alt}
+    className={`handy-image ${className}`}
+  >
+    <img css={hiddenImageStyles} src={src} />
   </div>
 );
 
