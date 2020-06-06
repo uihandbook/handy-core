@@ -18,20 +18,15 @@ const lightStyles = css`
   color: ${fontColor.light};
 `;
 
-const lighterStyles = css`
-  color: ${fontColor.lighter};
-`;
-
 export interface BodyProps extends WithClassName, WithCSS {
   children?: React.ReactNode;
-  color?: "default" | "light" | "lighter";
+  color?: "default" | "light";
   text?: string;
 }
 
 const styleMap = {
   default: defaultStyles,
-  light: lightStyles,
-  lighter: lighterStyles
+  light: lightStyles
 };
 
 export const Body: FC<BodyProps> = ({
