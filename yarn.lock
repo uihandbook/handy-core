@@ -5092,9 +5092,9 @@ ejs@^2.7.4:
   integrity sha512-7vmuyh5+kuUyJKePhQfRQBhXV5Ce+RnaeeQArKu1EAMpL3WbgMt5WG6uQZpEVvYSSsxMXRKOewtDk9RaTKXRlA==
 
 electron-to-chromium@^1.3.247, electron-to-chromium@^1.3.378, electron-to-chromium@^1.3.413:
-  version "1.3.462"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.462.tgz#82087404c20ed664963ececab23337ac7a150e21"
-  integrity sha512-HST/xWLOeA0LGUhxBqvcPDDUGHjB6rn99VBgPWmaHv+zqwXgOaZO5RnRcd5owjRE7nh+z1c0SwcK8qP8o7sofg==
+  version "1.3.463"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.463.tgz#bae89d8c2c69b4be32f80221fe49ab5786fab368"
+  integrity sha512-mAqvpG0efJXV9BGXPVjFdBFiqmawGoIc+c8T2uXYEvbV1/261PaOT0EzZ9dKW4IdGiHXQGSKnnOU86QhJ+5JcA==
 
 element-resize-detector@^1.2.1:
   version "1.2.1"
@@ -6341,8 +6341,8 @@ handle-thing@^2.0.0:
   resolved "git+ssh://git@github.com:uihandbook/handy-functions.git#2497f1e2049d86995b0ef263cf4df6c8bc1ff9a4"
 
 "handy-tokens@git+ssh://git@github.com:uihandbook/handy-tokens.git":
-  version "1.0.1"
-  resolved "git+ssh://git@github.com:uihandbook/handy-tokens.git#455caf80b9809e189b38e83cb49cdc1b06829b2f"
+  version "1.0.2"
+  resolved "git+ssh://git@github.com:uihandbook/handy-tokens.git#f4a1aef72d8a6ca0a6f409da67585a5ce1fbdef6"
   dependencies:
     handy-functions "git+ssh://git@github.com:uihandbook/handy-functions.git"
 
@@ -12543,9 +12543,9 @@ url@^0.11.0:
     querystring "0.2.0"
 
 use-callback-ref@^1.2.1:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/use-callback-ref/-/use-callback-ref-1.2.3.tgz#9f939dfb5740807bbf9dd79cdd4e99d27e827756"
-  integrity sha512-DPBPh1i2adCZoIArRlTuKRy7yue7QogtEnfv0AKrWsY+GA+4EKe37zhRDouNnyWMoNQFYZZRF+2dLHsWE4YvJA==
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/use-callback-ref/-/use-callback-ref-1.2.4.tgz#d86d1577bfd0b955b6e04aaf5971025f406bea3c"
+  integrity sha512-rXpsyvOnqdScyied4Uglsp14qzag1JIemLeTWGKbwpotWht57hbP78aNT+Q4wdFKQfQibbUX4fb6Qb4y11aVOQ==
 
 use-sidecar@^1.0.1:
   version "1.0.2"

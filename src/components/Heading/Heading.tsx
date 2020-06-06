@@ -2,17 +2,17 @@
 import { css, jsx } from "@emotion/core";
 import { FC } from "react";
 import { WithClassName, WithCSS } from "handy-types";
-import { fontFamily, fontSize, fontWeight } from "handy-tokens";
+import { fontColor, fontFamily, fontSize, fontWeight } from "handy-tokens";
 
 const headingStyles = css`
   font-family: ${fontFamily.regular};
   font-size: ${fontSize.base};
-  font-weight: ${fontWeight.regular};
+  font-weight: ${fontWeight.bold};
+  color: ${fontColor.base};
 `;
 
 const h1Styles = css`
   font-size: ${fontSize.largest};
-  font-weight: ${fontWeight.bold};
 `;
 
 const h2Styles = css`
