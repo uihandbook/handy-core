@@ -4,7 +4,7 @@ import { FC } from "react";
 import { WithClassName, WithCSS } from "handy-types";
 import { fontColor, fontFamily, fontSize, fontWeight } from "handy-tokens";
 
-const headingStyles = css`
+const bodyStyles = css`
   font-family: ${fontFamily.regular};
   font-size: ${fontSize.base};
   font-weight: ${fontWeight.light};
@@ -22,7 +22,7 @@ const lighterStyles = css`
   color: ${fontColor.lighter};
 `;
 
-export interface HeadingProps extends WithClassName, WithCSS {
+export interface BodyProps extends WithClassName, WithCSS {
   children?: React.ReactNode;
   color?: "default" | "light" | "lighter";
   text?: string;
@@ -34,7 +34,7 @@ const styleMap = {
   lighter: lighterStyles
 };
 
-export const Heading: FC<HeadingProps> = ({
+export const Body: FC<BodyProps> = ({
   children,
   className,
   css,
@@ -42,11 +42,11 @@ export const Heading: FC<HeadingProps> = ({
   color = "default"
 }) => (
   <p
-    css={[headingStyles, styleMap[color], css]}
+    css={[bodyStyles, styleMap[color], css]}
     className={`handy-body ${className}`}
   >
     {text || children}
   </p>
 );
 
-export default Heading;
+export default Body;
