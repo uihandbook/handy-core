@@ -1,11 +1,16 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import { FC } from "react";
-import { WithClassName, WithCSS, WithMargin } from "handy-types";
-import { getMargin } from "../../utilities";
+import { WithClassName, WithCSS, WithMargin, WithPadding } from "handy-types";
+import { getMargin, getPadding } from "../../utilities";
 import { Image, ImageProps } from "../Image/Image";
 
-export interface AvatarProps extends ImageProps, WithClassName, WithCSS, WithMargin {
+export interface AvatarProps
+  extends ImageProps,
+    WithClassName,
+    WithCSS,
+    WithMargin,
+    WithPadding {
   circle?: boolean;
   avatarSize?:
     | "smallest"
@@ -32,11 +37,15 @@ export const Avatar: FC<AvatarProps> = ({
   className,
   css,
   margin = "0px",
+  padding = "0px",
   rounded,
   avatarSize = "large",
   ...props
 }) => (
-  <div css={[getMargin(margin), css]} className={`handy-avatar ${className}`}>
+  <div
+    css={[getMargin(margin), getPadding(padding), css]}
+    className={`handy-avatar ${className}`}
+  >
     <Image
       responsive
       width={avatarSizes[avatarSize]}

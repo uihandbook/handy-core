@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import { FC } from "react";
-import { WithClassName, WithCSS } from "handy-types";
+import { WithClassName, WithCSS, WithMargin, WithPadding } from "handy-types";
+import { getMargin, getPadding } from "../../utilities";
 import { Avatar, AvatarProps } from "../Avatar/Avatar";
 import { Title, TitleProps } from "../Title/Title";
 import { spacing } from "handy-tokens";
@@ -18,7 +19,13 @@ const stackedStyles = css`
   justify-content: center;
 `;
 
-export interface AvatarTitleProps extends AvatarProps, TitleProps, WithClassName, WithCSS {
+export interface AvatarTitleProps
+  extends AvatarProps,
+    TitleProps,
+    WithClassName,
+    WithCSS,
+    WithMargin,
+    WithPadding {
   stacked?: boolean;
 }
 
@@ -26,13 +33,32 @@ export const AvatarTitle: FC<AvatarTitleProps> = ({
   avatarSize = "small",
   className,
   css,
+  margin = "0px",
+  padding = "0px",
   stacked = false,
   titleSize = 3,
   ...props
 }) => (
-  <div css={[titleStyles, stacked ? stackedStyles : null, css]} className={`handy-avatar-title ${className}`}>
-    <Avatar avatarSize={avatarSize} margin={stacked ? {bottom: spacing.small} : {right: spacing.large}} {...props} />
-    <Title titleSize={titleSize} align={stacked ? "center" : "left"} {...props} />
+  <div
+    css={[
+      titleStyles,
+      stacked ? stackedStyles : null,
+      getMargin(margin),
+      getPadding(padding),
+      css
+    ]}
+    className={`handy-avatar-title ${className}`}
+  >
+    <Avatar
+      avatarSize={avatarSize}
+      margin={stacked ? { bottom: spacing.small } : { right: spacing.large }}
+      {...props}
+    />
+    <Title
+      titleSize={titleSize}
+      align={stacked ? "center" : "left"}
+      {...props}
+    />
   </div>
 );
 

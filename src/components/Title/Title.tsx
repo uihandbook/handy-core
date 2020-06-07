@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import { FC } from "react";
-import { WithClassName, WithCSS } from "handy-types";
+import { WithClassName, WithCSS, WithMargin, WithPadding } from "handy-types";
+import { getMargin, getPadding } from "../../utilities";
 import { Heading } from "../Heading/Heading";
 import { Body } from "../Body/Body";
 import { spacing } from "handy-tokens";
@@ -23,7 +24,11 @@ const alignRightStyles = css`
   align-items: flex-end;
 `;
 
-export interface TitleProps extends WithClassName, WithCSS {
+export interface TitleProps
+  extends WithClassName,
+    WithCSS,
+    WithMargin,
+    WithPadding {
   align?: "left" | "center" | "right";
   children?: React.ReactNode;
   heading?: string;
@@ -32,10 +37,10 @@ export interface TitleProps extends WithClassName, WithCSS {
 }
 
 const alignMap = {
-  "left": alignLeftStyles,
-  "center": alignCenterStyles,
-  "right": alignRightStyles,
-}
+  left: alignLeftStyles,
+  center: alignCenterStyles,
+  right: alignRightStyles
+};
 
 export const Title: FC<TitleProps> = ({
   align = "left",
@@ -44,14 +49,27 @@ export const Title: FC<TitleProps> = ({
   className,
   css,
   heading,
+  margin = "0px",
+  padding = "0px",
   titleSize = 3
 }) => {
   return (
-    <div css={[titleStyles, alignMap[align], css]} className={`handy-title ${className}`}>
-      <Heading headingSize={titleSize} text={heading} margin={{bottom: spacing.smallest}} />
-      <Body color="light">
-        {body || children}
-      </Body>
+    <div
+      css={[
+        titleStyles,
+        alignMap[align],
+        getMargin(margin),
+        getPadding(padding),
+        css
+      ]}
+      className={`handy-title ${className}`}
+    >
+      <Heading
+        headingSize={titleSize}
+        text={heading}
+        margin={{ bottom: spacing.smallest }}
+      />
+      <Body color="light">{body || children}</Body>
     </div>
   );
 };

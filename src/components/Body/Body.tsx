@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import { FC } from "react";
-import { WithClassName, WithCSS } from "handy-types";
+import { WithClassName, WithCSS, WithMargin, WithPadding } from "handy-types";
+import { getMargin, getPadding } from "../../utilities";
 import { fontColor, fontFamily, fontSize, fontWeight } from "handy-tokens";
 
 const bodyStyles = css`
@@ -19,7 +20,11 @@ const lightStyles = css`
   color: ${fontColor.light};
 `;
 
-export interface BodyProps extends WithClassName, WithCSS {
+export interface BodyProps
+  extends WithClassName,
+    WithCSS,
+    WithMargin,
+    WithPadding {
   children?: React.ReactNode;
   color?: "default" | "light";
   text?: string;
@@ -34,11 +39,19 @@ export const Body: FC<BodyProps> = ({
   children,
   className,
   css,
+  margin = "0px",
+  padding = "0px",
   text,
   color = "default"
 }) => (
   <p
-    css={[bodyStyles, styleMap[color], css]}
+    css={[
+      bodyStyles,
+      styleMap[color],
+      getMargin(margin),
+      getPadding(padding),
+      css
+    ]}
     className={`handy-body ${className}`}
   >
     {text || children}

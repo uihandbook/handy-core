@@ -1,12 +1,8 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import { FC } from "react";
-import {
-  WithClassName,
-  WithCSS,
-  WithMargin
-} from "handy-types";
-import { getMargin } from "../../utilities";
+import { WithClassName, WithCSS, WithMargin, WithPadding } from "handy-types";
+import { getMargin, getPadding } from "../../utilities";
 import { fontColor, fontFamily, fontSize, fontWeight } from "handy-tokens";
 
 const headingStyles = css`
@@ -33,7 +29,11 @@ const h4Styles = css`
   font-size: ${fontSize.base};
 `;
 
-export interface HeadingProps extends WithClassName, WithCSS, WithMargin {
+export interface HeadingProps
+  extends WithClassName,
+    WithCSS,
+    WithMargin,
+    WithPadding {
   children?: React.ReactNode;
   headingSize?: 1 | 2 | 3 | 4;
   text?: string;
@@ -53,6 +53,7 @@ export const Heading: FC<HeadingProps> = ({
   className,
   css,
   margin = "0px",
+  padding = "0px",
   text,
   headingSize = 3
 }) => {
@@ -64,6 +65,7 @@ export const Heading: FC<HeadingProps> = ({
         headingStyles,
         styleMap[headingSize],
         getMargin(margin),
+        getPadding(padding),
         css
       ]}
       className={`handy-heading ${className}`}

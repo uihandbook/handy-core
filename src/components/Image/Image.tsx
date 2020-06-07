@@ -1,7 +1,14 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import { FC } from "react";
-import { WithClassName, WithCSS, WithShadow } from "handy-types";
+import {
+  WithClassName,
+  WithCSS,
+  WithMargin,
+  WithPadding,
+  WithShadow
+} from "handy-types";
+import { getMargin, getPadding } from "../../utilities";
 import { borderRadius, colors } from "handy-tokens";
 import { rgba } from "handy-functions";
 
@@ -21,7 +28,12 @@ const roundedStyles = css`
   border-radius: ${borderRadius.largest};
 `;
 
-export interface ImageProps extends WithClassName, WithCSS, WithShadow {
+export interface ImageProps
+  extends WithClassName,
+    WithCSS,
+    WithMargin,
+    WithPadding,
+    WithShadow {
   alt?: string;
   height?: number;
   responsive?: boolean;
@@ -36,6 +48,8 @@ export const Image: FC<ImageProps> = ({
   className,
   css,
   height,
+  margin = "0px",
+  padding = "0px",
   rounded = false,
   shadow,
   shadowColor = rgba(colors.dark_500),
@@ -50,6 +64,8 @@ export const Image: FC<ImageProps> = ({
       height ? `height:${height}px;` : null,
       rounded ? roundedStyles : null,
       shadow ? `box-shadow: ${shadow} ${shadowColor};` : null,
+      getMargin(margin),
+      getPadding(padding),
       css
     ]}
     title={alt}

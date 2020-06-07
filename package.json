@@ -13,6 +13,7 @@
     "handy-functions": "git+ssh://git@github.com:uihandbook/handy-functions.git",
     "handy-tokens": "git+ssh://git@github.com:uihandbook/handy-tokens.git",
     "handy-types": "git+ssh://git@github.com:uihandbook/handy-types.git",
+    "mdi-react": "^7.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
