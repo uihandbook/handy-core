@@ -4,6 +4,7 @@ import { FC } from "react";
 import { WithClassName, WithCSS, WithMargin, WithPadding } from "handy-types";
 import { setMargin, setPadding } from "handy-functions";
 import { Image, ImageProps } from "../Image/Image";
+import { colors } from "handy-tokens";
 
 const avatarStyles = css`
   display: inline-block;
@@ -57,7 +58,8 @@ export const Avatar: FC<AvatarProps> = ({
       rounded={false}
       css={[
         circle ? `border-radius: ${avatarSizes[avatarSize] / 2}px;` : null,
-        rounded ? `border-radius: ${avatarSizes[avatarSize] * 0.2}px;` : null
+        rounded ? `border-radius: ${avatarSizes[avatarSize] * 0.2}px;` : null,
+        `background-color: ${colors.light_900};`
       ]}
       {...props}
     />
