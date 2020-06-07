@@ -6,7 +6,7 @@ import { Image, ImageProps } from "../Image/Image";
 
 export interface AvatarProps extends ImageProps, WithClassName, WithCSS {
   circle?: boolean;
-  size?:
+  avatarSize?:
     | "smallest"
     | "smaller"
     | "small"
@@ -31,18 +31,18 @@ export const Avatar: FC<AvatarProps> = ({
   className,
   css,
   rounded,
-  size = "large",
+  avatarSize = "large",
   ...props
 }) => (
   <div css={css} className={`handy-avatar ${className}`}>
     <Image
       responsive
-      width={avatarSizes[size]}
-      height={avatarSizes[size]}
+      width={avatarSizes[avatarSize]}
+      height={avatarSizes[avatarSize]}
       rounded={false}
       css={[
-        circle ? `border-radius: ${avatarSizes[size] / 2}px;` : null,
-        rounded ? `border-radius: ${avatarSizes[size] * 0.2}px;` : null
+        circle ? `border-radius: ${avatarSizes[avatarSize] / 2}px;` : null,
+        rounded ? `border-radius: ${avatarSizes[avatarSize] * 0.2}px;` : null
       ]}
       {...props}
     />

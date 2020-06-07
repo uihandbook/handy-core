@@ -6,32 +6,32 @@ import Avatar from "./Avatar";
 
 storiesOf("Avatar", module)
   .add("Shape: Default", () => <div>
-    <Avatar size="smallest" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar size="smaller" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar size="small" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar size="medium" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar size="large" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar size="larger" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar size="largest" src="https://source.unsplash.com/300x300?face" />
+    <Avatar avatarSize="smallest" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar avatarSize="smaller" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar avatarSize="small" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar avatarSize="medium" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar avatarSize="large" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar avatarSize="larger" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar avatarSize="largest" src="https://source.unsplash.com/300x300?face" />
   </div>)
   .add("Shape: Rounded", () => <div>
-    <Avatar rounded size="smallest" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar rounded size="smaller" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar rounded size="small" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar rounded size="medium" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar rounded size="large" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar rounded size="larger" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar rounded size="largest" src="https://source.unsplash.com/300x300?face" />
+    <Avatar rounded avatarSize="smallest" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar rounded avatarSize="smaller" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar rounded avatarSize="small" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar rounded avatarSize="medium" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar rounded avatarSize="large" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar rounded avatarSize="larger" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar rounded avatarSize="largest" src="https://source.unsplash.com/300x300?face" />
   </div>)
   .add("Shape: Circle", () => <div>
-    <Avatar circle size="smallest" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar circle size="smaller" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar circle size="small" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar circle size="medium" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar circle size="large" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar circle size="larger" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Avatar circle size="largest" src="https://source.unsplash.com/300x300?face" />
+    <Avatar circle avatarSize="smallest" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar circle avatarSize="smaller" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar circle avatarSize="small" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar circle avatarSize="medium" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar circle avatarSize="large" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar circle avatarSize="larger" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar circle avatarSize="largest" src="https://source.unsplash.com/300x300?face" />
   </div>)
   .add("Option: Shadow", () => <div>
-    <Avatar circle shadow={shadows.larger} size="medium" src="https://source.unsplash.com/300x300?face" /> <br/>
+    <Avatar circle shadow={shadows.larger} avatarSize="medium" src="https://source.unsplash.com/300x300?face" /> <br/>
   </div>);

@@ -30,7 +30,7 @@ const h4Styles = css`
 
 export interface HeadingProps extends WithClassName, WithCSS {
   children?: React.ReactNode;
-  size?: 1 | 2 | 3 | 4;
+  headingSize?: 1 | 2 | 3 | 4;
   text?: string;
 }
 
@@ -48,13 +48,13 @@ export const Heading: FC<HeadingProps> = ({
   className,
   css,
   text,
-  size = 3
+  headingSize = 3
 }) => {
-  const Tag = `h${size}` as HeadingTag;
+  const Tag = `h${headingSize}` as HeadingTag;
 
   return (
     <Tag
-      css={[headingStyles, styleMap[size], css]}
+      css={[headingStyles, styleMap[headingSize], css]}
       className={`handy-heading ${className}`}
     >
       {text || children}

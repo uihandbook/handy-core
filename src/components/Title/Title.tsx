@@ -5,26 +5,49 @@ import { WithClassName, WithCSS } from "handy-types";
 import { Heading } from "../Heading/Heading";
 import { Body } from "../Body/Body";
 
-const titleStyles = css``;
+const titleStyles = css`
+  display: inline-flex;
+  flex-direction: column;
+`;
+
+const alignLeftStyles = css`
+  align-items: flex-start;
+`;
+
+const alignCenterStyles = css`
+  align-items: center;
+`;
+
+const alignRightStyles = css`
+  align-items: flex-end;
+`;
 
 export interface TitleProps extends WithClassName, WithCSS {
+  align?: "left" | "center" | "right";
   children?: React.ReactNode;
   heading?: string;
   body?: string;
-  size?: 1 | 2 | 3 | 4;
+  titleSize?: 1 | 2 | 3 | 4;
+}
+
+const alignMap = {
+  "left": alignLeftStyles,
+  "center": alignCenterStyles,
+  "right": alignRightStyles,
 }
 
 export const Title: FC<TitleProps> = ({
+  align = "left",
   body,
   children,
   className,
   css,
   heading,
-  size = 3
+  titleSize = 3
 }) => {
   return (
-    <div css={css} className={`handy-title ${className}`}>
-      <Heading size={size} text={heading} />
+    <div css={[titleStyles, alignMap[align], css]} className={`handy-title ${className}`}>
+      <Heading headingSize={titleSize} text={heading} />
       <Body color="light">
         {body || children}
       </Body>
