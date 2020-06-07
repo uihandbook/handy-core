@@ -11,21 +11,11 @@ const titleStyles = css`
   align-items: center;
   flex-direction: row;
   justify-content: flex-start;
-
-  & > * {
-    margin-bottom: 0;
-    margin-right: ${spacing.large};
-  }
 `;
 
 const stackedStyles = css`
   flex-direction: column;
   justify-content: center;
-
-  & > * {
-    margin-right: 0;
-    margin-bottom: ${spacing.small};
-  }
 `;
 
 export interface AvatarTitleProps extends AvatarProps, TitleProps, WithClassName, WithCSS {
@@ -41,7 +31,7 @@ export const AvatarTitle: FC<AvatarTitleProps> = ({
   ...props
 }) => (
   <div css={[titleStyles, stacked ? stackedStyles : null, css]} className={`handy-avatar-title ${className}`}>
-    <Avatar avatarSize={avatarSize} {...props} />
+    <Avatar avatarSize={avatarSize} margin={stacked ? {bottom: spacing.small} : {right: spacing.large}} {...props} />
     <Title titleSize={titleSize} align={stacked ? "center" : "left"} {...props} />
   </div>
 );

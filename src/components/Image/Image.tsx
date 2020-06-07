@@ -55,7 +55,7 @@ export const Image: FC<ImageProps> = ({
     title={alt}
     className={`handy-image ${className}`}
   >
-    <img css={hiddenImageStyles} src={src} />
+    <img css={hiddenImageStyles} src={src} alt={alt} />
   </div>
 );
 

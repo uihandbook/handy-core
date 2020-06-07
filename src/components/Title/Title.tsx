@@ -4,6 +4,7 @@ import { FC } from "react";
 import { WithClassName, WithCSS } from "handy-types";
 import { Heading } from "../Heading/Heading";
 import { Body } from "../Body/Body";
+import { spacing } from "handy-tokens";
 
 const titleStyles = css`
   display: inline-flex;
@@ -47,7 +48,7 @@ export const Title: FC<TitleProps> = ({
 }) => {
   return (
     <div css={[titleStyles, alignMap[align], css]} className={`handy-title ${className}`}>
-      <Heading headingSize={titleSize} text={heading} />
+      <Heading headingSize={titleSize} text={heading} margin={{bottom: spacing.smallest}} />
       <Body color="light">
         {body || children}
       </Body>

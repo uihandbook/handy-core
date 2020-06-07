@@ -6383,7 +6383,7 @@ handle-thing@^2.0.0:
 
 "handy-types@git+ssh://git@github.com:uihandbook/handy-types.git":
   version "1.0.0"
-  resolved "git+ssh://git@github.com:uihandbook/handy-types.git#c5d59feaafc6aff96174c0e42b31d36be54fbefc"
+  resolved "git+ssh://git@github.com:uihandbook/handy-types.git#0e1c78dfbcbe5c6c569f1a2d07b0ec57441a3d57"
 
 har-schema@^2.0.0:
   version "2.0.0"

@@ -1,6 +1,5 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { shadows } from "handy-tokens";
 
 import Avatar from "./Avatar";
 
@@ -31,7 +30,4 @@ storiesOf("Avatar", module)
     <Avatar circle avatarSize="large" src="https://source.unsplash.com/300x300?face" /> <br/>
     <Avatar circle avatarSize="larger" src="https://source.unsplash.com/300x300?face" /> <br/>
     <Avatar circle avatarSize="largest" src="https://source.unsplash.com/300x300?face" />
-  </div>)
-  .add("Option: Shadow", () => <div>
-    <Avatar circle shadow={shadows.larger} avatarSize="medium" src="https://source.unsplash.com/300x300?face" /> <br/>
   </div>);

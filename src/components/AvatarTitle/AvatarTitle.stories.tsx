@@ -44,7 +44,7 @@ storiesOf("AvatarTitle", module).add("Shape: Default", () => (
       circle
       stacked
       avatarSize="large"
-      titleSize={2}
+      titleSize={3}
       src="https://source.unsplash.com/300x300?face"
       heading="Corey Johnson"
     >
