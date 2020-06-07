@@ -9,6 +9,7 @@ const headingStyles = css`
   font-size: ${fontSize.base};
   font-weight: ${fontWeight.bold};
   color: ${fontColor.base};
+  margin: 0;
 `;
 
 const h1Styles = css`

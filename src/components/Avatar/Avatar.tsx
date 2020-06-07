@@ -1,12 +1,8 @@
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core";
+import { jsx } from "@emotion/core";
 import { FC } from "react";
 import { WithClassName, WithCSS } from "handy-types";
 import { Image, ImageProps } from "../Image/Image";
-
-const avatarStyles = css`
-  overflow: hidden;
-`;
 
 export interface AvatarProps extends ImageProps, WithClassName, WithCSS {
   circle?: boolean;
@@ -38,17 +34,17 @@ export const Avatar: FC<AvatarProps> = ({
   size = "large",
   ...props
 }) => (
-  <div css={[avatarStyles, css]} className={`handy-avatar ${className}`}>
+  <div css={css} className={`handy-avatar ${className}`}>
     <Image
       responsive
       width={avatarSizes[size]}
       height={avatarSizes[size]}
       rounded={false}
-      {...props}
       css={[
         circle ? `border-radius: ${avatarSizes[size] / 2}px;` : null,
         rounded ? `border-radius: ${avatarSizes[size] * 0.2}px;` : null
       ]}
+      {...props}
     />
   </div>
 );

@@ -8,6 +8,7 @@ const bodyStyles = css`
   font-family: ${fontFamily.regular};
   font-size: ${fontSize.base};
   font-weight: ${fontWeight.light};
+  margin: 0;
 `;
 
 const defaultStyles = css`
