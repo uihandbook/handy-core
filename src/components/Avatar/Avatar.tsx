@@ -31,7 +31,7 @@ export const Avatar: FC<AvatarProps> = ({
   circle = false,
   className,
   css,
-  margin = 0,
+  margin = "0px",
   rounded,
   avatarSize = "large",
   ...props

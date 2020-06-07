@@ -52,7 +52,7 @@ export const Heading: FC<HeadingProps> = ({
   children,
   className,
   css,
-  margin = 0,
+  margin = "0px",
   text,
   headingSize = 3
 }) => {

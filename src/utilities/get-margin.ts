@@ -5,9 +5,7 @@ export const getMargin = (margin: WithMargin['margin']) => {
     return null;
   }
 
-  if(typeof margin === 'number') {
-    return `margin: ${margin}px;`;
-  } else if(typeof margin === 'object') {
+  if(typeof margin === 'object') {
     const marginTop = margin['top'] ? margin['top'] : 0;
     const marginRight = margin['right'] ? margin['right'] : 0;
     const marginBottom = margin['bottom'] ? margin['bottom'] : 0;
@@ -18,6 +16,6 @@ export const getMargin = (margin: WithMargin['margin']) => {
       margin-bottom: ${marginBottom};
       margin-left: ${marginLeft};`;
   } else {
-    return null;
+    return `margin: ${margin}px;`;
   }
 };
