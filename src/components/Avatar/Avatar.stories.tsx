@@ -1,6 +1,5 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { Indicator } from "../Indicator/Indicator";
 
 import Avatar from "./Avatar";
 
@@ -30,5 +29,5 @@ storiesOf("Avatar", module)
     <Avatar circle avatarSize="medium" src="https://source.unsplash.com/300x300?face" /> <br/>
     <Avatar circle avatarSize="large" src="https://source.unsplash.com/300x300?face" /> <br/>
     <Avatar circle avatarSize="larger" src="https://source.unsplash.com/300x300?face" /> <br/>
-    <Indicator distance="near"><Avatar circle avatarSize="largest" src="https://source.unsplash.com/300x300?face" /></Indicator>
+    <Avatar circle avatarSize="largest" src="https://source.unsplash.com/300x300?face" />
   </div>);
