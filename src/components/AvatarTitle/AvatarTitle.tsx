@@ -2,7 +2,7 @@
 import { css, jsx } from "@emotion/core";
 import { FC } from "react";
 import { WithClassName, WithCSS, WithMargin, WithPadding } from "handy-types";
-import { getMargin, getPadding } from "../../utilities";
+import { setMargin, setPadding } from "handy-functions";
 import { Avatar, AvatarProps } from "../Avatar/Avatar";
 import { Title, TitleProps } from "../Title/Title";
 import { spacing } from "handy-tokens";
@@ -43,8 +43,8 @@ export const AvatarTitle: FC<AvatarTitleProps> = ({
     css={[
       titleStyles,
       stacked ? stackedStyles : null,
-      getMargin(margin),
-      getPadding(padding),
+      setMargin(margin),
+      setPadding(padding),
       css
     ]}
     className={`handy-avatar-title ${className}`}

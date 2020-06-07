@@ -2,7 +2,7 @@
 import { css, jsx } from "@emotion/core";
 import { FC } from "react";
 import { WithClassName, WithCSS, WithMargin, WithPadding } from "handy-types";
-import { getMargin, getPadding } from "../../utilities";
+import { setMargin, setPadding } from "handy-functions";
 import { Heading } from "../Heading/Heading";
 import { Body } from "../Body/Body";
 import { spacing } from "handy-tokens";
@@ -58,8 +58,8 @@ export const Title: FC<TitleProps> = ({
       css={[
         titleStyles,
         alignMap[align],
-        getMargin(margin),
-        getPadding(padding),
+        setMargin(margin),
+        setPadding(padding),
         css
       ]}
       className={`handy-title ${className}`}

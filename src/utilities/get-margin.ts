@@ -1,6 +1,6 @@
 import { WithMargin } from "handy-types";
 
-export const getMargin = (margin: WithMargin['margin']) => {
+export const setMargin = (margin: WithMargin['margin']) => {
   if(!margin) {
     return null;
   }

@@ -1,9 +1,13 @@
 /** @jsx jsx */
-import { jsx } from "@emotion/core";
+import { css, jsx } from "@emotion/core";
 import { FC } from "react";
 import { WithClassName, WithCSS, WithMargin, WithPadding } from "handy-types";
-import { getMargin, getPadding } from "../../utilities";
+import { setMargin, setPadding } from "handy-functions";
 import { Image, ImageProps } from "../Image/Image";
+
+const avatarStyles = css`
+  display: inline-block;
+`;
 
 export interface AvatarProps
   extends ImageProps,
@@ -43,7 +47,7 @@ export const Avatar: FC<AvatarProps> = ({
   ...props
 }) => (
   <div
-    css={[getMargin(margin), getPadding(padding), css]}
+    css={[avatarStyles, setMargin(margin), setPadding(padding), css]}
     className={`handy-avatar ${className}`}
   >
     <Image

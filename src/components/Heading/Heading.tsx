@@ -2,7 +2,7 @@
 import { css, jsx } from "@emotion/core";
 import { FC } from "react";
 import { WithClassName, WithCSS, WithMargin, WithPadding } from "handy-types";
-import { getMargin, getPadding } from "../../utilities";
+import { setMargin, setPadding } from "handy-functions";
 import { fontColor, fontFamily, fontSize, fontWeight } from "handy-tokens";
 
 const headingStyles = css`
@@ -64,8 +64,8 @@ export const Heading: FC<HeadingProps> = ({
       css={[
         headingStyles,
         styleMap[headingSize],
-        getMargin(margin),
-        getPadding(padding),
+        setMargin(margin),
+        setPadding(padding),
         css
       ]}
       className={`handy-heading ${className}`}

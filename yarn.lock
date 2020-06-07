@@ -6373,17 +6373,17 @@ handle-thing@^2.0.0:
 
 "handy-functions@git+ssh://git@github.com:uihandbook/handy-functions.git":
   version "1.0.1"
-  resolved "git+ssh://git@github.com:uihandbook/handy-functions.git#2497f1e2049d86995b0ef263cf4df6c8bc1ff9a4"
+  resolved "git+ssh://git@github.com:uihandbook/handy-functions.git#a25486a175be7f8ac080def76f23eb86b56399a2"
 
 "handy-tokens@git+ssh://git@github.com:uihandbook/handy-tokens.git":
   version "1.0.2"
-  resolved "git+ssh://git@github.com:uihandbook/handy-tokens.git#8c06333e21e04d87c596c644f66d1e42f8880b66"
+  resolved "git+ssh://git@github.com:uihandbook/handy-tokens.git#fee6fe2bf8e0efa9f3b68a308760b0f9b1b7a569"
   dependencies:
     handy-functions "git+ssh://git@github.com:uihandbook/handy-functions.git"
 
 "handy-types@git+ssh://git@github.com:uihandbook/handy-types.git":
   version "1.0.0"
-  resolved "git+ssh://git@github.com:uihandbook/handy-types.git#1d8ec673e25585338213b16e16f7dc12824e7abd"
+  resolved "git+ssh://git@github.com:uihandbook/handy-types.git#8543a2bfdfe95efde8f18f6881f2dc12a628ee11"
 
 har-schema@^2.0.0:
   version "2.0.0"

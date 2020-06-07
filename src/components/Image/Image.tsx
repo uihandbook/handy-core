@@ -8,7 +8,7 @@ import {
   WithPadding,
   WithShadow
 } from "handy-types";
-import { getMargin, getPadding } from "../../utilities";
+import { setMargin, setPadding } from "handy-functions";
 import { borderRadius, colors } from "handy-tokens";
 import { rgba } from "handy-functions";
 
@@ -64,8 +64,8 @@ export const Image: FC<ImageProps> = ({
       height ? `height:${height}px;` : null,
       rounded ? roundedStyles : null,
       shadow ? `box-shadow: ${shadow} ${shadowColor};` : null,
-      getMargin(margin),
-      getPadding(padding),
+      setMargin(margin),
+      setPadding(padding),
       css
     ]}
     title={alt}

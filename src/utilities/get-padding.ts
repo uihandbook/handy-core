@@ -1,6 +1,6 @@
 import { WithPadding } from "handy-types";
 
-export const getPadding = (padding: WithPadding['padding']) => {
+export const setPadding = (padding: WithPadding['padding']) => {
   if(!padding) {
     return null;
   }
