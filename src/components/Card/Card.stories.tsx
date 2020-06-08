@@ -1,7 +1,8 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { shadows, spacing } from "handy-tokens";
+import { colors, shadows, spacing } from "handy-tokens";
 import { AvatarTitle } from "../AvatarTitle/AvatarTitle";
+import { Avatar } from "../Avatar/Avatar";
 import { Heading } from "../Heading/Heading";
 
 import Card from "./Card";
@@ -41,5 +42,14 @@ storiesOf("Card", module)
       >
         CEO of Company
       </AvatarTitle>
+    </Card>
+  ))
+  .add("Option: Background", () => (
+    <Card background={colors.dark_900} padding={spacing.largest}>
+      <Avatar
+        circle
+        avatarSize="larger"
+        src="https://source.unsplash.com/300x300?face"
+      />
     </Card>
   ));

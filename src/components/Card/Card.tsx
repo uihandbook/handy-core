@@ -2,6 +2,7 @@
 import { css, jsx } from "@emotion/core";
 import { FC } from "react";
 import {
+  WithBackground,
   WithClassName,
   WithCSS,
   WithPadding,
@@ -14,7 +15,6 @@ import { borderRadius, colors, opacity } from "handy-tokens";
 const cardStyles = css`
   display: inline-block;
   box-sizing: border-box;
-  background: ${colors.light_900};
 `;
 
 const roundedStyles = css`
@@ -22,7 +22,8 @@ const roundedStyles = css`
 `;
 
 export interface CardProps
-  extends WithClassName,
+  extends WithBackground,
+    WithClassName,
     WithCSS,
     WithPadding,
     WithMargin,
@@ -31,6 +32,7 @@ export interface CardProps
 }
 
 export const Card: FC<CardProps> = ({
+  background = colors.light_900,
   children,
   className,
   css,
@@ -47,6 +49,7 @@ export const Card: FC<CardProps> = ({
         cardStyles,
         rounded ? roundedStyles : null,
         shadow ? `box-shadow: ${shadow} ${shadowColor};` : null,
+        background ? `background-color: ${background};` : null,
         setMargin(margin),
         setPadding(padding),
         css
