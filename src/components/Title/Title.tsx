@@ -30,7 +30,6 @@ export interface TitleProps
     WithMargin,
     WithPadding {
   align?: "left" | "center" | "right";
-  children?: React.ReactNode;
   heading?: string;
   body?: string;
   titleSize?: 1 | 2 | 3 | 4;

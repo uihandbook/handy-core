@@ -2,8 +2,8 @@
 import { css, jsx } from "@emotion/core";
 import { FC } from "react";
 import { WithClassName, WithCSS, WithMargin, WithPadding } from "handy-types";
-import { setMargin, setPadding } from "handy-functions";
-import { fontColor, fontFamily, fontSize, fontWeight } from "handy-tokens";
+import { rgba, setMargin, setPadding } from "handy-functions";
+import { fontColor, fontFamily, fontSize, fontWeight, opacity } from "handy-tokens";
 
 const bodyStyles = css`
   font-family: ${fontFamily.regular};
@@ -17,7 +17,7 @@ const defaultStyles = css`
 `;
 
 const lightStyles = css`
-  color: ${fontColor.light};
+  color: ${rgba(fontColor.base, opacity._4)};
 `;
 
 export interface BodyProps
@@ -25,7 +25,6 @@ export interface BodyProps
     WithCSS,
     WithMargin,
     WithPadding {
-  children?: React.ReactNode;
   color?: "default" | "light";
   text?: string;
 }

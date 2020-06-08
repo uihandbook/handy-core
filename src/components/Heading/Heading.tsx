@@ -34,7 +34,6 @@ export interface HeadingProps
     WithCSS,
     WithMargin,
     WithPadding {
-  children?: React.ReactNode;
   headingSize?: 1 | 2 | 3 | 4;
   text?: string;
 }
