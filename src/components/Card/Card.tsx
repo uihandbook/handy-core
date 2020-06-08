@@ -49,7 +49,7 @@ export const Card: FC<CardProps> = ({
         cardStyles,
         rounded ? roundedStyles : null,
         shadow ? `box-shadow: ${shadow} ${shadowColor};` : null,
-        background ? `background-color: ${background};` : null,
+        background ? `background-color: ${colors[background]};` : null,
         setMargin(margin),
         setPadding(padding),
         css

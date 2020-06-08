@@ -43,6 +43,16 @@ export const avatarSizes = {
   largest: 200
 };
 
+const circlePositionMap = {
+  smallest: -6,
+  smaller: -5,
+  small: 0,
+  medium: 2,
+  large: 5,
+  larger: 12,
+  largest: 22
+};
+
 const AvatarContent: FC<AvatarProps> = ({
   circle,
   className,
@@ -72,16 +82,6 @@ const AvatarContent: FC<AvatarProps> = ({
     />
   </div>
 );
-
-const circlePositionMap = {
-  smallest: -6,
-  smaller: -5,
-  small: 0,
-  medium: 2,
-  large: 5,
-  larger: 12,
-  largest: 21
-};
 
 export const Avatar: FC<AvatarProps> = ({
   avatarSize = "medium",
