@@ -22,6 +22,7 @@ const imageStyles = css`
 
 const hiddenImageStyles = css`
   visibility: hidden;
+  max-width: 100%;
 `;
 
 const roundedStyles = css`
