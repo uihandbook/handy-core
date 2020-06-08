@@ -1,9 +1,7 @@
 {
   "name": "@uihandbook/handy-core",
   "version": "0.0.1",
-  "publishConfig": {
-    "access": "public"
-  },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
