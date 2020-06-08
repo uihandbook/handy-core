@@ -30,4 +30,15 @@ storiesOf("Avatar", module)
     <Avatar circle avatarSize="large" src="https://source.unsplash.com/300x300?face" /> <br/>
     <Avatar circle avatarSize="larger" src="https://source.unsplash.com/300x300?face" /> <br/>
     <Avatar circle avatarSize="largest" src="https://source.unsplash.com/300x300?face" />
+  </div>)
+  .add("Option: Status", () => <div>
+    <Avatar status="success" avatarSize="medium" src="https://source.unsplash.com/300x300?face" /><br/>
+    <Avatar status="success" rounded avatarSize="medium" src="https://source.unsplash.com/300x300?face" /><br/>
+    <Avatar status="success" circle avatarSize="smallest" src="https://source.unsplash.com/300x300?face" /><br/>
+    <Avatar status="success" circle avatarSize="smaller" src="https://source.unsplash.com/300x300?face" /><br/>
+    <Avatar status="success" circle avatarSize="small" src="https://source.unsplash.com/300x300?face" /><br/>
+    <Avatar status="success" circle avatarSize="medium" src="https://source.unsplash.com/300x300?face" /><br/>
+    <Avatar status="success" circle avatarSize="large" src="https://source.unsplash.com/300x300?face" /><br/>
+    <Avatar status="success" circle avatarSize="larger" src="https://source.unsplash.com/300x300?face" /><br/>
+    <Avatar status="success" circle avatarSize="largest" src="https://source.unsplash.com/300x300?face" /><br/>
   </div>);
