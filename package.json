@@ -28,6 +28,10 @@
     "build-storybook": "build-storybook -s public",
     "deploy-storybook": "storybook-to-ghpages"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uihandbook/handy-core.git"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
