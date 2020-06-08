@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import { FC } from "react";
-import { WithClassName, WithCSS, WithMargin, WithPadding } from "handy-types";
-import { setMargin, setPadding } from "handy-functions";
-import { fontColor, fontFamily, fontSize, fontWeight } from "handy-tokens";
+import { WithClassName, WithCSS, WithMargin, WithPadding } from "@uihandbook/handy-types";
+import { setMargin, setPadding } from "@uihandbook/handy-functions";
+import { fontColor, fontFamily, fontSize, fontWeight } from "@uihandbook/handy-tokens";
 
 const headingStyles = css`
   font-family: ${fontFamily.regular};

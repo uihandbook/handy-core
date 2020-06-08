@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import { FC } from "react";
-import { WithClassName, WithCSS, WithMargin, WithPadding } from "handy-types";
-import { setMargin, setPadding } from "handy-functions";
+import { WithClassName, WithCSS, WithMargin, WithPadding } from "@uihandbook/handy-types";
+import { setMargin, setPadding } from "@uihandbook/handy-functions";
 import { Heading } from "../Heading/Heading";
 import { Body } from "../Body/Body";
-import { spacing } from "handy-tokens";
+import { spacing } from "@uihandbook/handy-tokens";
 
 const titleStyles = css`
   display: inline-flex;

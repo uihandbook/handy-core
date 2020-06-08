@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { colors, shadows, spacing } from "handy-tokens";
+import { colors, shadows, spacing } from "@uihandbook/handy-tokens";
 import { AvatarTitle } from "../AvatarTitle/AvatarTitle";
 import { Avatar } from "../Avatar/Avatar";
 import { Heading } from "../Heading/Heading";

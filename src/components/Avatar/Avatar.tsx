@@ -1,15 +1,15 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import { FC } from "react";
-import { WithClassName, WithCSS, WithMargin, WithPadding } from "handy-types";
-import { setMargin, setPadding, toNegative } from "handy-functions";
+import { WithClassName, WithCSS, WithMargin, WithPadding } from "@uihandbook/handy-types";
+import { setMargin, setPadding, toNegative } from "@uihandbook/handy-functions";
 import { Image, ImageProps } from "../Image/Image";
 import {
   StatusIndicator,
   StatusIndicatorProps
 } from "../StatusIndicator/StatusIndicator";
 import { statusSize } from "../Status/Status";
-import { colors } from "handy-tokens";
+import { colors } from "@uihandbook/handy-tokens";
 
 const avatarStyles = css`
   display: inline-block;

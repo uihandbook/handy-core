@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import { FC } from "react";
-import { WithClassName, WithCSS } from "handy-types";
+import { WithClassName, WithCSS } from "@uihandbook/handy-types";
 
 export type StarterComponentProps = WithClassName & WithCSS;
 

@@ -9,8 +9,8 @@ import {
   WithPadding,
   WithPosition,
   WithStatus
-} from "handy-types";
-import { setMargin, setPadding, setPosition } from "handy-functions";
+} from "@uihandbook/handy-types";
+import { setMargin, setPadding, setPosition } from "@uihandbook/handy-functions";
 
 const statusIndicatorWrapperStyles = css`
   position: relative;

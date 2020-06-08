@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import { FC } from "react";
-import { WithClassName, WithCSS, WithStatus } from "handy-types";
-import { colors, statusColors } from "handy-tokens";
+import { WithClassName, WithCSS, WithStatus } from "@uihandbook/handy-types";
+import { colors, statusColors } from "@uihandbook/handy-tokens";
 
 export const statusSize = 10;
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { shadows } from "handy-tokens";
+import { shadows } from "@uihandbook/handy-tokens";
 
 import Image from "./Image";
 

@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import { FC } from "react";
-import { WithClassName, WithCSS, WithMargin, WithPadding } from "handy-types";
-import { rgba, setMargin, setPadding } from "handy-functions";
-import { fontColor, fontFamily, fontSize, fontWeight, opacity } from "handy-tokens";
+import { WithClassName, WithCSS, WithMargin, WithPadding } from "@uihandbook/handy-types";
+import { rgba, setMargin, setPadding } from "@uihandbook/handy-functions";
+import { fontColor, fontFamily, fontSize, fontWeight, opacity } from "@uihandbook/handy-tokens";
 
 const bodyStyles = css`
   font-family: ${fontFamily.regular};

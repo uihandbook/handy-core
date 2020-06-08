@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import { FC } from "react";
-import { WithClassName, WithCSS, WithPadding, WithMargin } from "handy-types";
-import { setMargin, setPadding } from "handy-functions";
+import { WithClassName, WithCSS, WithPadding, WithMargin } from "@uihandbook/handy-types";
+import { setMargin, setPadding } from "@uihandbook/handy-functions";
 
 export type StarterComponentWithSpacingProps = WithClassName &
   WithCSS &

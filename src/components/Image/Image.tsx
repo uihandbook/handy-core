@@ -7,10 +7,10 @@ import {
   WithMargin,
   WithPadding,
   WithShadow
-} from "handy-types";
-import { setMargin, setPadding } from "handy-functions";
-import { borderRadius, colors } from "handy-tokens";
-import { rgba } from "handy-functions";
+} from "@uihandbook/handy-types";
+import { setMargin, setPadding } from "@uihandbook/handy-functions";
+import { borderRadius, colors } from "@uihandbook/handy-tokens";
+import { rgba } from "@uihandbook/handy-functions";
 
 const imageStyles = css`
   display: inline-block;

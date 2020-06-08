@@ -8,9 +8,9 @@ import {
   WithPadding,
   WithMargin,
   WithShadow
-} from "handy-types";
-import { rgba, setMargin, setPadding } from "handy-functions";
-import { borderRadius, colors, opacity } from "handy-tokens";
+} from "@uihandbook/handy-types";
+import { rgba, setMargin, setPadding } from "@uihandbook/handy-functions";
+import { borderRadius, colors, opacity } from "@uihandbook/handy-tokens";
 
 const cardStyles = css`
   display: inline-block;
