@@ -7,10 +7,11 @@ import {
   WithCSS,
   WithPadding,
   WithMargin,
-  WithShadow
+  WithShadow,
+  WithStatus
 } from "@uihandbook/handy-types";
 import { rgba, setMargin, setPadding } from "@uihandbook/handy-functions";
-import { borderRadius, colors, opacity } from "@uihandbook/handy-tokens";
+import { borderRadius, colors, opacity, statusColors } from "@uihandbook/handy-tokens";
 
 const cardStyles = css`
   display: inline-block;
@@ -27,7 +28,8 @@ export interface CardProps
     WithCSS,
     WithPadding,
     WithMargin,
-    WithShadow {
+    WithShadow,
+    WithStatus {
   rounded?: boolean;
 }
 
@@ -40,7 +42,8 @@ export const Card: FC<CardProps> = ({
   margin = "0px",
   rounded = true,
   shadow,
-  shadowColor = rgba(colors.dark_900, opacity._2)
+  shadowColor = rgba(colors.dark_900, opacity._2),
+  status
 }) => {
   return (
     <div
@@ -49,7 +52,8 @@ export const Card: FC<CardProps> = ({
         cardStyles,
         rounded ? roundedStyles : null,
         shadow ? `box-shadow: ${shadow} ${shadowColor};` : null,
-        background ? `background-color: ${colors[background]};` : null,
+        background ? `background-color: ${background};` : null,
+        status ? `background-color: ${statusColors[`${status}_500`]};` : null,
         setMargin(margin),
         setPadding(padding),
         css
