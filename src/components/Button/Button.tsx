@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
-import { FC, Fragment, SyntheticEvent } from "react";
+import { FC, SyntheticEvent } from "react";
 import {
   WithBackground,
   WithClassName,
@@ -29,8 +29,8 @@ import {
 
 export const buttonSizes = {
   small: 32,
-  default: 40,
-  large: 50
+  default: 48,
+  large: 60
 };
 
 const buttonStyles = css`
@@ -40,7 +40,7 @@ const buttonStyles = css`
   align-items: center;
   font-weight: ${fontWeight.regular};
   font-size: ${fontSize.small};
-  letter-spacing: ${letterSpacing.larger};
+  letter-spacing: ${letterSpacing.large};
   position: relative;
 
   &,
@@ -131,13 +131,16 @@ export const Button: FC<ButtonProps> = ({
 }) => {
   const Tag = link ? `a` : (`button` as ButtonTag);
 
+  const paddingSpacing = size === "small" ? spacing.large : spacing.largest;
+  const paddingValues = padding && {left: paddingSpacing, right: paddingSpacing};
+
   return (
     <Tag
       className={`handy-button ${className}`}
       css={[
         buttonStyles,
         setMargin(margin),
-        setPadding(padding),
+        setPadding(paddingValues),
         inverse ? `color: ${rgba(fontColor.base, opacity._8)};` : `color: ${rgba(fontColor.white, opacity._9)};`,
         shadow ? `box-shadow: ${shadow} ${shadowColor};` : null,
         background ? `background-color: ${background};` : null,
@@ -148,7 +151,7 @@ export const Button: FC<ButtonProps> = ({
         block ? btnBlockStyles : null,
         disabled ? btnDisabledStyles : null,
         `height:${buttonSizes[size]}px;`,
-        rounded ? `border-radius: ${buttonSizes[size] / 2}px` : `border-radius: ${buttonSizes[size] / 3.5}px`,
+        rounded ? `border-radius: ${buttonSizes[size] / 2}px` : `border-radius: ${buttonSizes[size] / 5.5}px`,
         css
       ]}
       {...(link ? `target=${target}` : null)}
