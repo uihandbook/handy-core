@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
-import { FC, SyntheticEvent } from "react";
+import { FC, Fragment, SyntheticEvent } from "react";
 import {
   WithBackground,
   WithClassName,
@@ -10,9 +10,13 @@ import {
   WithShadow,
   WithStatus
 } from "@uihandbook/handy-types";
-import { rgba, setMargin, setPadding } from "@uihandbook/handy-functions";
 import {
-  borderRadius,
+  rgba,
+  setMargin,
+  setPadding,
+  shade
+} from "@uihandbook/handy-functions";
+import {
   colors,
   fontColor,
   fontSize,
@@ -23,19 +27,36 @@ import {
   statusColors
 } from "@uihandbook/handy-tokens";
 
-export const buttonSize = 44;
+export const buttonSizes = {
+  small: 32,
+  default: 40,
+  large: 50
+};
 
 const buttonStyles = css`
   border: 0;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  height: ${buttonSize}px;
-  border-radius: ${borderRadius.larger};
-  color: ${rgba(fontColor.white, opacity._9)};
   font-weight: ${fontWeight.regular};
   font-size: ${fontSize.small};
   letter-spacing: ${letterSpacing.larger};
+  position: relative;
+
+  &,
+  &:focus,
+  &:active,
+  &:visited {
+    outline: none;
+  }
+
+  span {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const btnBlockStyles = css`
@@ -44,9 +65,20 @@ const btnBlockStyles = css`
 `;
 
 const btnDisabledStyles = css`
-  pointer-events: none;
   cursor: not-allowed;
   opacity: ${opacity._7};
+`;
+
+const btnLoadingStyles = css`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
+
+const btnLoadingTextStyles = css`
+  opacity: 0;
 `;
 
 export interface ButtonProps
@@ -62,6 +94,9 @@ export interface ButtonProps
   link?: boolean;
   loading?: boolean;
   onClick?: (e: SyntheticEvent) => void;
+  inverse?: boolean;
+  rounded?: boolean;
+  size?: "small" | "default" | "large";
   target?: "_blank" | "_self" | "_parent" | "_top";
   text?: string;
 }
@@ -81,12 +116,15 @@ export const Button: FC<ButtonProps> = ({
     bottom: "0px",
     left: spacing.largest
   },
+  inverse = false,
   link = false,
   loading = false,
   margin = "0px",
   onClick,
+  rounded = false,
   shadow,
   shadowColor = rgba(colors.dark_900, opacity._2),
+  size = "default",
   status,
   target = "_self",
   text
@@ -100,18 +138,25 @@ export const Button: FC<ButtonProps> = ({
         buttonStyles,
         setMargin(margin),
         setPadding(padding),
+        inverse ? `color: ${rgba(fontColor.base, opacity._8)};` : `color: ${rgba(fontColor.white, opacity._9)};`,
         shadow ? `box-shadow: ${shadow} ${shadowColor};` : null,
         background ? `background-color: ${background};` : null,
-        status ? `background-color: ${statusColors[`${status}_500`]};` : null,
+        status
+          ? `background-color: ${statusColors[`${status}_500`]};
+             color: ${shade(statusColors[`${status}_900`], opacity._5)};`
+          : null,
         block ? btnBlockStyles : null,
         disabled ? btnDisabledStyles : null,
+        `height:${buttonSizes[size]}px;`,
+        rounded ? `border-radius: ${buttonSizes[size] / 2}px` : `border-radius: ${buttonSizes[size] / 3.5}px`,
         css
       ]}
       {...(link ? `target=${target}` : null)}
       {...(disabled ? `disabled=${disabled}` : null)}
-      onClick={onClick}
+      {...(!!disabled && { onClick: onClick })}
     >
-      {loading ? <span></span> : <span>{text || children}</span>}
+      {loading && <span css={btnLoadingStyles}>...</span>}
+      <span css={loading ? btnLoadingTextStyles : null}>{text || children}</span>
     </Tag>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { shadows, spacing } from "@uihandbook/handy-tokens";
+import { colors, shadows, spacing } from "@uihandbook/handy-tokens";
 import { AvatarTitle } from "../AvatarTitle/AvatarTitle";
 import { Avatar } from "../Avatar/Avatar";
 import { Heading } from "../Heading/Heading";
@@ -45,7 +45,7 @@ storiesOf("Card", module)
     </Card>
   ))
   .add("Option: Background", () => (
-    <Card background="dark_900" padding={spacing.largest}>
+    <Card background={colors.dark_900} padding={spacing.largest}>
       <Avatar
         circle
         avatarSize="larger"
