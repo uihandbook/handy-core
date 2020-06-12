@@ -15,7 +15,7 @@
     "@types/react-dom": "^16.9.8",
     "@uihandbook/handy-functions": "^0.0.1",
     "@uihandbook/handy-tokens": "^0.0.1",
-    "@uihandbook/handy-types": "^0.0.1",
+    "@uihandbook/handy-types": "^0.0.2",
     "mdi-react": "^7.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
