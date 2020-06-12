@@ -12,7 +12,7 @@ import { statusSize } from "../Status/Status";
 import { colors } from "@uihandbook/handy-tokens";
 
 const avatarStyles = css`
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 `;
